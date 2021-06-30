@@ -2,10 +2,11 @@ const mongoose = require("../dataBase");
 
 let universidadeSchema = new mongoose.Schema(
   {
-    nomeUniversidade: String,
-    anoFundacao: Number,
-    contacto: Number,
-    localizacao: String,
+    "universidade": String,
+    "anoFundacao": Number,
+    "categoria": String,
+    "localizacao": String,
+    "site":String
   },
   { timestamps: true }
 );

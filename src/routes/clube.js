@@ -30,4 +30,14 @@ router.post("/", async (req, res, next) => {
     next(error);
   }
 });
+
+router.delete("/:id", async (req, res, next) => {
+  try {
+    const id = req.params.id;
+    const resultado = await Clube.findByIdAndDelete(id);
+    res.json(resultado);
+  } catch (error) {
+    next(error);
+  }
+});
 module.exports = router;

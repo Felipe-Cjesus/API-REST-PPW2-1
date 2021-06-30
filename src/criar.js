@@ -12,12 +12,12 @@ curso.save().then(function () {
   console.log("salvo");
 });
 
-// const Artista = require('./models/Artista')
+const Artista = require('./models/Artista')
 
-// const a = new Artista({
-//     nome: "Artista 02",
-//     pais: "Portugal"
-// })
+const a = new Artista({
+    nome: "Artista 02",
+    pais: "Portugal"
+})
 
 // a.save().then(function(){
 //     console.log('salvo')

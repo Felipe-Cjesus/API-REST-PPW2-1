@@ -1,11 +1,15 @@
 const mongoose = require("../dataBase");
+const Clube = require("../models/Clube");
 
 let estadioSchema = new mongoose.Schema(
   {
-    nomeEstadio: String,
+    Estadio: String,
     capacidade: Number,
     pais: String,
-    clubeMandante: String,
+    clubeMandante: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Clube",
+    },
   },
   { timestamps: true }
 );
