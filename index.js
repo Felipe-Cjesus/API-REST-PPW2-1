@@ -7,7 +7,7 @@ app.use("/api", routes);
 app.get('/', (req, res)=>{
   res.json({
     "name":"Pedro Ventura",
-    "endpoint":["api/cursos", "api/universidade", "api/clube", "api/estadio"],
+    "endpoint":["/api/cursos", "/api/universidades", "/api/clubes", "/api/estadios"],
     "description":""
   })
 })
