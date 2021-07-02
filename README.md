@@ -1,29 +1,76 @@
+# Projeto Final - PPW II | UNESC
 
-# 🏆 Api de futebol ⚽
-
-![alt text](https://i.pinimg.com/originals/ca/ed/5e/caed5e2e5fa8da98e7077290f0ef5505.jpg)
-
-## Projeto Final - PPW II
+Este repositório apresenta o desenvolvimento da avaliação do ProjetoFinal  da disciplina de Programação Web II do Curso de Ciência da Computação – UNESC do semestre 2021.1.
 
 ---
+
+## Sobre o projeto
+
+Criar uma API RESTful usando Node.js, a biblioteca Express.js e uma conexão com um banco   de   dados   MongoDB  que seja capaz de  manipular dados   de   maneira  estruturada usando JSON.
+
+A API Permite a manipulação de, pelo menos, dois tipos de recursos diferentes. A estrutura da aplicação é desenvolvida utilizando a arquitetura REST (como visto em aula). Um dos recursos é uma referência para umaAPI externa, desenvolvida por outro colega.
 
 [🚀 Acessar aplicação](https://app-ppw2.herokuapp.com)
 
-## O que a aplicação é capaz de fazer 🏁
+---
 
-API criada para gerar uma listagem de clubes de futebol. Foi desenvolvido dois end points cada um com sua API REST / CRUD. Ao gravar um estádio novo novo a API pega a propriedade pais onde esta localizado de uma outra API externa.
+## EndPoints
+
+        GET https://app-ppw2.herokuapp.com/api/clubes
+
+Exemplo clubes
+
+    {
+        "_id": "60ded8bdffcecc596dd1f441",
+        "clube": "Real Madrid CF",
+        "anoFundacao": 1902,
+        "pais": "60de56cbd5a48f27e4841f94",
+        "estadio": "60ded960ffcecc596dd1f446",
+        "createdAt": "2021-07-02T09:13:33.903Z",
+        "updatedAt": "2021-07-02T09:16:50.294Z",
+        "__v": 0
+    }
+---
+Passando o ID na URL  para personalizar a requisição.
+
+    // GET https://app-ppw2.herokuapp.com/api/clubes/ID do clube
+
+ ---
+
+    {
+        "_id": "60ded8bdffcecc596dd1f441",
+        "clube": "Real Madrid CF",
+        "anoFundacao": 1902,
+        "pais": {
+            "_id": "60de56cbd5a48f27e4841f94",
+            "nome": "Espanha",
+            "continente": "Europa",
+            "sigla": "ESP",
+            "capital": "Madrid",
+            "createdAt": "2021-07-01T23:59:07.148Z",
+            "updatedAt": "2021-07-01T23:59:07.148Z",
+            "__v": 0
+        },
+        "estadio": {
+            "_id": "60ded960ffcecc596dd1f446",
+            "Estadio": "Santiago Bernabéu",
+            "capacidade": 81.044,
+            "pais": "60de56cbd5a48f27e4841f94",
+            "clubeMandante": "60ded8bdffcecc596dd1f441",
+            "createdAt": "2021-07-02T09:16:16.119Z",
+            "updatedAt": "2021-07-02T09:16:16.119Z",
+            "__v": 0
+        },
+        "createdAt": "2021-07-02T09:13:33.903Z",
+        "updatedAt": "2021-07-02T09:16:50.294Z",
+        "__v": 0
+    }
 
 ---
 
-## End Points
-
-    GET https://app-ppw2.herokuapp.com/api/clubes
-
-Esta gera uma estrutura com dados os clubes cadastrados no banco
+Exemplo estádios
 
     GET https://app-ppw2.herokuapp.com/api/estadios
-
-Esta gera uma estrutura com dados dos estádios cadastrados no banco.
 
 ---
 
