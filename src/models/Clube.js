@@ -4,8 +4,11 @@ let clubeSchema = new mongoose.Schema(
   {
     clube: String,
     anoFundacao: Number,
-    pais: String,
-    sigla: String,
+    pais: Object,
+    estadio: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Estadio",
+    },
   },
   { timestamps: true }
 );

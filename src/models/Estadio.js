@@ -5,7 +5,7 @@ let estadioSchema = new mongoose.Schema(
   {
     Estadio: String,
     capacidade: Number,
-    pais: String,
+    pais: Object,
     clubeMandante: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Clube",
