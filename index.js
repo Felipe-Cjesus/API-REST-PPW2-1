@@ -5,22 +5,22 @@ const routes = require("./src/routes");
 const errorHandler = require("./src/middleware/errorHandler");
 const jwt = require("jsonwebtoken");
 
-app.post("/login", async (req, res) => {
-  // verificar se o usuário realmente é valido
-  const token = jwt.sign({ id: "publico" }, "secreta", { expiresIn: 600 });
-  res.json(token);
-});
+// app.post("/login", async (req, res) => {
+//   // verificar se o usuário realmente é valido
+//   const token = jwt.sign({ id: "publico" }, "secreta", { expiresIn: 600 });
+//   res.json(token);
+// });
 
-app.use(async (req, res, next) => {
-  try {
-    const authorization = req.headers.authorization;
-    const token = authorization.split("Bearer")[1];
-    const credencial = await jwt.verify(token, "secreta");
-    next();
-  } catch (error) {
-    next(error);
-  }
-});
+// app.use(async (req, res, next) => {
+//   try {
+//     const authorization = req.headers.authorization;
+//     const token = authorization.split("Bearer")[1];
+//     const credencial = await jwt.verify(token, "secreta");
+//     next();
+//   } catch (error) {
+//     next(error);
+//   }
+// });
 
 app.use("/api", routes);
 app.use(errorHandler);
