@@ -1,7 +1,5 @@
 # Projeto Final - PPW II | UNESC
 
-Este repositório apresenta o desenvolvimento da avaliação do ProjetoFinal  da disciplina de Programação Web II do Curso de Ciência da Computação – UNESC do semestre 2021.1.
-
 ---
 
 ## Sobre o projeto
